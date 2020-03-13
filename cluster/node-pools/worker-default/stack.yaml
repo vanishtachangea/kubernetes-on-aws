@@ -129,6 +129,22 @@ Resources:
           MarketType: spot
 {{ end }}
         UserData: "{{ .UserData }}"
+        TagSpecifications:
+        - ResourceType: "instance"
+          Tags:
+          - Key: 'kubernetes.io/cluster/{{ .Cluster.ID }}'
+            Value: owned
+          - Key: Name
+            Value: "{{ .NodePool.Name }} ({{ .Cluster.ID }})"
+          - Key: k8s.io/role/node
+            Value: worker
+          - Key: node.kubernetes.io/role
+            Value: worker
+# only node pools without taints should be attached to Ingress Load balancer
+{{- if not (index .NodePool.ConfigItems "taints") }}
+          - Key: zalando.org/ingress-enabled
+            Value: "true"
+{{- end }}
     Type: 'AWS::EC2::LaunchTemplate'
   AutoScalingInstanceProfile:
     Properties:
