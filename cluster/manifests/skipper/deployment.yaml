@@ -36,7 +36,7 @@ spec:
                   values:
                   - skipper-ingress
               topologyKey: kubernetes.io/hostname
-      priorityClassName: system-cluster-critical
+      priorityClassName: custom-system-cluster-critical
       serviceAccountName: skipper-ingress
       dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true

@@ -28,7 +28,7 @@ spec:
         options:
           - name: ndots
             value: "1"
-      priorityClassName: system-cluster-critical
+      priorityClassName: custom-system-cluster-critical
       serviceAccountName: external-dns
       containers:
       - name: external-dns

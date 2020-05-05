@@ -22,7 +22,7 @@ spec:
       annotations:
         config/hash: {{"02-secret.yaml" | manifestHash}}
     spec:
-      priorityClassName: system-cluster-critical
+      priorityClassName: custom-system-cluster-critical
       serviceAccountName: vpa-admission-controller
       containers:
       - name: admission-controller

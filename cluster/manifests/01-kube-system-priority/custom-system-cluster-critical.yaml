@@ -1,0 +1,10 @@
+# TODO: Temporary role required until v1.18 where system-node-critical can be
+# used by non kube-system namespace
+# Allows logging-agent higher priority than cluster-critical components.
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: custom-system-cluster-critical
+value: 500000000
+globalDefault: false
+description: "This priority class is used by cluster critical components."

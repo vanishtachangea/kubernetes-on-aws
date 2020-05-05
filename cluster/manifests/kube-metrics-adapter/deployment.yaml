@@ -25,7 +25,7 @@ spec:
         options:
           - name: ndots
             value: "1"
-      priorityClassName: system-cluster-critical
+      priorityClassName: custom-system-cluster-critical
       serviceAccountName: custom-metrics-apiserver
       containers:
       - name: kube-metrics-adapter

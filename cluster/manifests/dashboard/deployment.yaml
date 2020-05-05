@@ -23,7 +23,7 @@ spec:
         options:
           - name: ndots
             value: "1"
-      priorityClassName: system-cluster-critical
+      priorityClassName: custom-system-cluster-critical
       serviceAccountName: kubernetes-dashboard
       containers:
       - name: kubernetes-dashboard
