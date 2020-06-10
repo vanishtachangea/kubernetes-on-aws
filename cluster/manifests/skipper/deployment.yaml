@@ -42,7 +42,7 @@ spec:
       hostNetwork: true
       containers:
       - name: skipper-ingress
-        image: registry.opensource.zalan.do/pathfinder/skipper:v0.11.107
+        image: registry.opensource.zalan.do/pathfinder/skipper:v0.11.109
         ports:
         - name: ingress-port
           containerPort: 9999
